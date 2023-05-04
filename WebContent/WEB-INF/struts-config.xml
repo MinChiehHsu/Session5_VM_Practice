@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="BackendActionForm" type="com.training.vo.BackendActionForm" />
+		<form-bean name="FrontendActionForm" type="com.training.vo.FrontendActionForm" />
+	</form-beans>
+	<action-mappings>
+		<action path="/LoginAction" type="com.training.action.LoginAction" parameter="action">
+            
+<!-- Login actions -->
+            <forward name="success" path="/VendingMachine.html" redirect="true"/>
+            <forward name="fail" path="/VMLogin.html" redirect="true"/>
+        </action>    
+		<action path="/BackendAction" type="com.training.action.BackendAction"
+			parameter="action" name="BackendActionForm">
+<!-- Add new goods -->
+			<forward name="VM_Backend_GoodsCreate" path="/BackendAction.do?action=createGoodsPage"
+				redirect="true" />
+			<forward name="VM_Backend_GoodsCreatePage" path="/WEB-INF/view/VM_Backend_GoodsCreate.html"/>
+				
+<!-- Replenish goods -->
+			<forward name="VM_Backend_GoodsReplenishment" path="/BackendAction.do?action=updateGoodsPage"
+				redirect="true" />
+			<forward name="VM_Backend_GoodsReplenishmentPage" path="/WEB-INF/view/VM_Backend_GoodsReplenishment.html"/>
+				
+<!-- Query goods -->
+			<forward name="VM_Backend_GoodsList" path="/BackendAction.do?action=queryGoods" 
+				redirect="true" />	
+			<forward name="VM_Backend_GoodsListPage" path="/WEB-INF/view/VM_Backend_GoodsList.html" />
+			
+<!-- Sales Report -->
+			<forward name="VM_Backend_GoodsSaleReport" path="/BackendAction.do?action=queryOrderBetweenDatePage" 
+				redirect="true" />	
+			<forward name="VM_Backend_GoodsSaleReportPage" path="/WEB-INF/view/VM_Backend_GoodsSaleReport.html" />
+		</action>
+		<action path="/FrontendAction" type="com.training.action.FrontendAction"
+			parameter="action" name="FrontendActionForm">
+			<forward name="VM_Frontend" path="/VendingMachine.html"
+				redirect="true" />
+			<!-- add more forwards here if needed -->
+		</action>
+	</action-mappings>
+</struts-config>

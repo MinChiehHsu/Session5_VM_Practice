@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>販賣機-後臺</title>
+<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<h1>Vending Machine Backend Service</h1>
+	<br />
+	<table border="1"
+		style="border-collapse: collapse;; margin-left: 25px;">
+		<tr>
+			<td width="200" height="50" align="center"><a
+				href="BackendAction.do?action=queryGoods">商品列表</a></td>
+			<td width="200" height="50" align="center"><a
+				href="BackendAction.do?action=updateGoodsPage">商品維護作業</a></td>
+			<td width="200" height="50" align="center"><a
+				href="BackendAction.do?action=createGoodsPage">商品新增上架</a></td>
+			<td width="200" height="50" align="center"><a
+				href="BackendAction.do?action=queryOrderBetweenDatePage">銷售報表</a></td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<HR>
+
+	<h2>商品維護作業</h2>
+	<br />
+	<div style="margin-left: 25px;">
+		<form action="BackendAction.do?action=updateGoods" method="post">
+			<p>
+				飲料名稱： <select name="goodsID">
+					<option value="1">金桔百香鮮果茶</option>
+					<option value="2">紅心芭樂檸檬鮮果茶</option>
+					<option value="3">柳橙檸檬蜂蜜水</option>
+					<option value="4">柳橙汁</option>
+					<option value="5">葡萄莓果綜合果汁</option>
+					<option value="6">藍莓優格飲</option>
+					<option value="7">Cascara Macchiato</option>
+					<option value="8">Iced Cascara</option>
+					<option value="9">Dark Caramel Latte</option>
+					<option value="10">White Chocolate Mocha</option>
+					<option value="11">Flat White</option>
+					<option value="12">Espresso Choice Extra Shot Latte</option>
+					<option value="13">Cappuccino</option>
+					<option value="14">Caffe Latte</option>
+					<option value="15">Iced Caffe Latte</option>
+					<option value="16">Caramel Macchiato</option>
+					<option value="17">Iced Caramel Macchiato</option>
+					<option value="18">Caffe Mocha</option>
+					<option value="19">Iced Caffe Mocha</option>
+					<option value="20">Caffe Americano</option>
+					<option value="21">Iced Caffe Americano</option>
+					<option value="22">Espresso</option>
+					<option value="23">Triple Mocha Frappuccino</option>
+					<option value="24">Dark Caramel Coffee Frappuccino</option>
+					<option value="25">Coffee Frappuccino Blended Beverage</option>
+					<option value="26">Caramel Frappuccino Blended Beverage</option>
+					<option value="27">Caramel Java Chip Frappuccino Blended
+						Beverage</option>
+					<option value="28">Java Chip Frappuccino Blended Beverage</option>
+				</select>
+			</p>
+			<p>
+				更改價格： <input type="number" name="goodsPrice" size="5" value="0"
+					min="0" max="1000">
+			</p>
+			<p>
+				補貨數量： <input type="number" name="goodsQuantity" size="5" value="0"
+					min="0" max="1000">
+			</p>
+			<p>
+				商品狀態： <select name="status">
+					<option value="1">上架</option>
+					<option value="0">下架</option>
+				</select>
+			</p>
+			<p>
+				<input type="submit" value="送出">
+			</p>
+		</form>
+	</div>
+</body>
+</html>
